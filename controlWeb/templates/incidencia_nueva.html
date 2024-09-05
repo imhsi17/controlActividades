@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Nueva Incidencia | Control Actividades
+{% endblock titulo %}
+
+{% block contenido %}
+<h1>Incidencia - {{ tarea.nombre_tarea }}</h1>
+<div class="incidencia">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input-box">
+            <input type="text" name="fecha_realizada" value="{{ fecha }}" autocomplete="off" required>
+            <label for="">Fecha Realizada</label>
+        </div>
+        <div class="input-box">
+            <input type="time" name="hora_inicio" autocomplete="off" placeholder="HH:MM" required>
+            <label for="">Hora Iniciada</label>
+        </div>
+        <div class="input-box">
+            <input type="time" name="hora_fin" value="{{ hora }}" required>
+            <label for="">Hora Finalizada</label>
+        </div>
+        <div class="input-box">
+            <textarea name="comentario" required></textarea>
+            <label for="">Comentario</label>
+        </div>
+        <div class="input-box">
+            <input type="number" name="progreso" autocomplete="off" required>
+            <label for="">Progreso(%)</label>
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+</div>
+{% endblock contenido %}

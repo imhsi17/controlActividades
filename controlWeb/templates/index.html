@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Inicio | Control Actividades
+{% endblock titulo %}
+
+{% block contenido %}
+
+<h1>Listado Empresas - Actividades</h1>
+
+{% for empresa in empresas %}
+<div class="contenedor">
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="centrado">Nombre Empresa</th>
+                <th class="centrado">Dirección</th>
+                <th class="centrado">Correo</th>
+                <th class="izquierda" colspan="2">Rubro</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        
+            <tr>
+                <td>{{ empresa.nombre_empresa }}</td>
+                <td>{{ empresa.direccion }}</td>
+                <td>{{ empresa.correo_empresa }}</td>
+                <td class="izquierda">{{ empresa.rubro }}</td>
+            </tr>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <th class="derecha">N°</th>
+                    <th class="centrado">Actividad</th>
+                    <th class="centrado">Estado</th>
+                    <th colspan="2" class="izquierda">Tiempo Estimado</th>
+                </thead>
+                <tbody>
+                    {% for name, actividades in datos.items %}
+                        {% if actividades %}
+                            {% if  empresa.nombre_empresa == name %}
+                                {% for actividad in actividades %}
+                    
+                        <tr class="detalles">
+                            <td class="derecha">{{ forloop.counter }}</td>
+                            <td class="izquierda">{{ actividad.nombre_actividad }}</td>
+                            <td class="centrado">{{ actividad.estado_actividad }}</td>
+                            <td class="izquierda">{{ actividad.tiempo_establecido_actividad }} HORAS</td>
+                            <td class="izquierda"><button type="button" class="btn btn-success"><a href="/tareas/{{ actividad.id }}">Ver Tareas</a></button></td>
+                        </tr>
+                                {% endfor %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+        </div>
+        
+        
+        </tbody>
+    </table>
+</div>
+<hr>
+{% endfor %}
+{% endblock contenido %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Incidencias | Control Actividades
+{% endblock titulo %}
+
+{% block contenido %}
+<h1>Incidencias Registradas {{ fecha }}</h1>
+<div class="contenedor">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Empresa</th>
+                <th>Actividad</th>
+                <th>Tarea</th>
+                <th>Comentario</th>
+                <th>Tiempo Empleado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if incidencias %}
+            {% for incidencia in incidencias %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ incidencia.tarea.actividad.empresa }}</td>
+                    <td>{{ incidencia.tarea.actividad }}</td>
+                    <td>{{ incidencia.tarea }}</td>
+                    <td>{{ incidencia.comentario }}</td>
+                    <td>{{ incidencia.tiempo_empleado }}</td>
+                </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td class="centrado" colspan="6">SIN INCIDENCIAS REGISTRADAS</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock contenido %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Tareas | Control Actividades
+{% endblock titulo %}
+
+{% block contenido %}
+<h1>Listado Tareas - {{actividad.nombre_actividad}}</h1>
+<div class="contenedor">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Tiempo Estimado</th>
+                <th>Estado</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if tareas %}
+            {% for tarea in tareas %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ tarea.nombre_tarea }}</td>
+                <td>{{ tarea.descripcion_tarea }}</td>
+                <td>{{ tarea.tiempo_establecido_tarea }} HORAS</td>
+                <td>{{ tarea.estado_tarea }}</td>
+                <td><button type="button" class="btn btn-success"><a href="/incidencia_nueva/{{ tarea.id }}">Agregar Incidencia</a></button></td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td class="centrado" colspan="6">SIN TAREAS REGISTRADAS</td>
+            </tr>
+            {% endif %}
+        </tbody>
+        
+    </table>
+</div>
+
+
+{% endblock contenido %}

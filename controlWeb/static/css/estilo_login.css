@@ -1,0 +1,119 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #141e30;
+}
+
+.login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5) ;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.7);
+}
+
+.login-box img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -20%;
+    left: calc(50% - 50px);
+}
+
+.login-box .credenciales h1{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #5aaabe;
+    text-align: center;
+}
+
+.login-box .credenciales .input-box{
+    position: relative;
+}
+
+.login-box .credenciales .input-box input{
+    width: 100%;
+    padding: 10px 7%;
+    font-size: 16px;
+    color: #5aaabe;
+    margin-bottom: 30px;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .credenciales .input-box label{
+    position: absolute;
+    top: 0;
+    left: 7%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #5aaabe;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box i {
+    position: absolute;
+    color: aliceblue;
+    right: 20px;
+    top: 30%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.login-box .credenciales .input-box input:focus~label,
+.login-box .credenciales .input-box input:valid~label{
+    top: -20%;
+    left: 0;
+    color: #60d7f5;
+    font-size: 14px;
+}
+
+.login-box .credenciales .messages{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.login-box .credenciales .messages li{
+    color: rgb(238, 34, 34);
+}
+
+.login-box .credenciales button{
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: solid 1px white;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 14px;
+    color: #5aaabe;
+    font-weight: 600;
+    transition: transform 0.5s, color 0.5s, font-size 0.5s;
+}
+
+.login-box .credenciales button:hover{
+    transform: scale(1.05, 1.1);
+    color: #60d7f5;
+    font-size: 16px;
+    
+}

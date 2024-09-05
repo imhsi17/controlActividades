@@ -1,0 +1,181 @@
+
+.navbar{
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 0.5rem;
+}
+
+.navbar-brand{
+    font-weight: 600;
+    font-size: 24px;
+    color: #5aaabe;
+    transition: 0.3s color;
+}
+
+.login-button{
+    background-color: #5aaabe;
+    color: #fff;
+    padding:  8px 25px;
+    border-radius: 50px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s background-color, color 0.3s;
+}
+
+.login-button:hover{
+    background-color: #7fdbf1;
+    color: black;
+}
+
+.navbar-toggler{
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link{
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active{
+    color: #000;
+}
+
+@media (min-width:992px) {
+
+    .nav-link::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #5aaabe;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .nav-link:hover::before, .nav-link.active::before{
+        width: 100%;
+        visibility: visible;
+    }
+    
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.contenedor{
+    margin: 50px;
+}
+
+hr{
+    border: 2px solid black;
+    margin: 50px;
+}
+
+.contenedor a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.centrado{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.derecha{
+    text-align: right;
+    vertical-align: middle;
+}
+
+.izquierda{
+    text-align: left;
+    vertical-align: middle; 
+}
+
+.incidencia{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    background: rgba(243, 237, 237, 0.7);
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.incidencia .input-box{
+    position: relative;
+}
+
+.incidencia .input-box input, .incidencia .input-box textarea{
+    width: 100%;
+    padding: 10px 7%;
+    font-size: 16px;
+    border: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    color: #5aaabe;
+    margin-bottom: 30px;
+    outline: none;
+    background: transparent;
+}
+
+.incidencia .input-box label{
+    position: absolute;
+    top: 0;
+    margin-top: 5px;
+    left: 7%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #5aaabe;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.incidencia .input-box input:focus~label,
+.incidencia .input-box input:valid~label,
+.incidencia .input-box textarea:focus~label,
+.incidencia .input-box textarea:valid~label{
+    top: -40%;
+    left: 0;
+    color: #24849c;
+    font-size: 18px;
+}
+
+.incidencia button{
+    width: 70%;
+    height: 45px;
+    background: transparent;
+    border: solid 1px rgba(0, 0, 0, 0.5);
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 14px;
+    color: #5aaabe;
+    font-weight: 600;
+    transition: transform 0.5s, color 0.5s, font-size 0.5s;
+}
+
+.incidencia button:hover{
+    transform: scale(1.05,1.05);
+    color: #24849c;
+    font-size: 16px;
+}
+
