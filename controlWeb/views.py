@@ -54,7 +54,7 @@ def tareas(request, id):
 def nueva_incidencia(request, id):
     
     try:
-        locale.setlocale(locale.LC_TIME, 'es_PE.UTF-8')
+        #locale.setlocale(locale.LC_TIME, 'es_PE.UTF-8')
         hora = datetime.now().time().strftime("%H:%M")
         fecha = datetime.now().date().strftime("%Y-%m-%d")
         tarea = Tarea.objects.get(id=id)
@@ -87,7 +87,7 @@ def nueva_incidencia(request, id):
 
 def incidencias(request):
     
-    locale.setlocale(locale.LC_TIME, 'es_PE.UTF-8')
+    #locale.setlocale(locale.LC_TIME, 'es_PE.UTF-8')
     fecha = datetime.now().date().strftime("%Y-%m-%d")
     incidencias = Jornada.objects.filter(fecha_realizada=fecha)
     
